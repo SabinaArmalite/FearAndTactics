@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://boehgpg2unjrw"]
+
+[ext_resource type="Script" path="res://PreBinaries/camera_000.gd" id="1_qtca4"]
+
+[node name="Camera000" type="Camera3D"]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 2.43379, 2.55561, 0)
+doppler_tracking = 1
+current = true
+script = ExtResource("1_qtca4")
+
+[node name="CameraTrigger" type="CollisionPolygon3D" parent="."]
+physics_interpolation_mode = 2
+transform = Transform3D(7.54542, 2.13163e-13, -7.10543e-14, 0, -5.35523, -4.4287, 2.84217e-14, 5.35523, -4.4287, 8.05745e-08, 1.84333, -1.84333)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://s1s0fu4h6hn5"]
+
+[ext_resource type="Script" path="res://PreBinaries/jogador.gd" id="1_hla8i"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ibkwm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ccw12"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y50k5"]
+
+[node name="Jogador" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.133149, 0)
+script = ExtResource("1_hla8i")
+
+[node name="Jogadormesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ibkwm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jogadormesh"]
+transform = Transform3D(1, 0, 0, 0, 0.13, 0, 0, 0, 0.5, 1.31134e-08, 0.3, -0.3)
+mesh = SubResource("BoxMesh_ccw12")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_y50k5")

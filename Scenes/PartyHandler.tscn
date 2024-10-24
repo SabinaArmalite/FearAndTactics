@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be3l1pi0g56ma"]
+
+[ext_resource type="Script" path="res://PreBinaries/party_handler.gd" id="1_ug8y5"]
+
+[node name="PartyHandler" type="Node"]
+script = ExtResource("1_ug8y5")

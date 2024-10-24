@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=4 uid="uid://d1ghknfl4ii5h"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_fj7s7"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://Qodot-3c611e7d00cf45ef30faf69741aa87b9fd98bac9/addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_qbtk6"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_0hy4v"]
+[ext_resource type="Script" path="res://jogador.gd" id="4_vrtge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nki1m"]
+albedo_color = Color(1, 0.455753, 0.849853, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyj8o"]
+albedo_color = Color(1, 0.455753, 0.849853, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b6orw"]
+_surfaces = [{
+"aabb": AABB(-25.75, -2.875, -20.25, 33, 5, 33),
+"attribute_data": PackedByteArray("AACIQwAAgMEAAIhDAACAQQAAgMMAAIBBAACAwwAAgMEAAIjDAACAwQAAgEMAAIDBAACAQwAAgEEAAIjDAACAQQAAiEMAAIDDAACIQwAAiEMAAIDDAACIQwAAgMMAAIDDAACIwwAAgMMAAIBDAACAwwAAgEMAAIhDAACIwwAAiEMAAIhDAACAwQAAiEMAAIBBAACAwwAAgEEAAIDDAACAwQAAiMMAAIDBAACAQwAAgMEAAIBDAACAQQAAiMMAAIBBAABgwwAAgMIBAEDDAACAwgEAoMIAAIDBAABgwwAAgMEAAABDAQBAQwAAUEMBAEBDAABQQwEAoEIAAABDAQCgQgAAAMMAAGDDAAAAwwEAoMIAAFDDAQCgwgAAUMMAAGDDAAAAQwAAYMMAAFBDAABgwwAAUEMBAEDDAAAAQwEAQMMAAADDAACAwgAAAMMAAIDBAABQwwAAgMEAAFDDAACAwgEAQEMAAIDCAABgQwAAgMIAAGBDAACAwQEAoEIAAIDBAABAwwAAgMIAAEDDAACAwQAAYMMAAIDBAABgwwAAgMIAAIBBAACAwgAAAEMAAIDCAAAAQwAAgMEAAIBBAACAwQAAgMEAAGDDAACAwQAAQMMAAADDAABAwwAAAMMAAGDDAACAQQAAYMMAAABDAABgwwAAAEMAAEDDAACAQQAAQMMAAIDBAACAwgAAgMEAAIDBAAAAwwAAgMEAAADDAACAwgAAQEMAAIDCAABgQwAAgMIAAGBDAACAwQAAQEMAAIDBAABgwwAAgMIBAEDDAACAwgEAoMIAAIDBAABgwwAAgMEAAIDCAQBAQwAAgEEBAEBDAACAQQEAoEIAAIDCAQCgQgAAgEIAAGDDAACAQgEAoMIAAIDBAQCgwgAAgMEAAGDDAACAwgAAYMMAAIBBAABgwwAAgEEBAEDDAACAwgEAQMMAAIBCAACAwgAAgEIAAIDBAACAwQAAgMEAAIDBAACAwgEAQEMAAIDCAABgQwAAgMIAAGBDAACAwQEAoEIAAIDB"),
+"format": 34359742487,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcASABJAEoASABKAEsATABNAE4ATABOAE8AUABRAFIAUABSAFMAVABVAFYAVABWAFcAWABZAFoAWABaAFsAXABdAF4AXABeAF8A"),
+"material": SubResource("StandardMaterial3D_yyj8o"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 96,
+"vertex_data": PackedByteArray("AADOwQAAYL8AAKLBAADOwQAAOMAAAKLBAADoQAAAOMAAAKLBAADoQAAAYL8AAKLBAADOwQAAYL8AAKLBAADOwQAAYL8AAExBAADOwQAAOMAAAExBAADOwQAAOMAAAKLBAADoQAAAOMAAAKLBAADOwQAAOMAAAKLBAADOwQAAOMAAAExBAADoQAAAOMAAAExBAADoQAAAYL8AAKLBAADoQAAAYL8AAExBAADOwQAAYL8AAExBAADOwQAAYL8AAKLBAADoQAAAYL8AAKLBAADoQAAAOMAAAKLBAADoQAAAOMAAAExBAADoQAAAYL8AAExBAADOwQAAYL8AAExBAADoQAAAYL8AAExBAADoQAAAOMAAAExBAADOwQAAOMAAAExBAACoQAAACEAAAJhABABQQAAACEAAAJhA/v9vwAAAYL8AAJhAAACoQAAAYL8AAJhABABQQAAACEAAAJhABABQQAAACEAAABxB/v9vwAAAYL8AABxB/v9vwAAAYL8AAJhAAACoQAAAYL8AAJhA/v9vwAAAYL8AAJhA/v9vwAAAYL8AABxBAACoQAAAYL8AABxBAACoQAAACEAAAJhAAACoQAAACEAAABxBBABQQAAACEAAABxBBABQQAAACEAAAJhAAACoQAAACEAAAJhAAACoQAAAYL8AAJhAAACoQAAAYL8AABxBAACoQAAACEAAABxBBABQQAAACEAAABxBAACoQAAACEAAABxBAACoQAAAYL8AABxB/v9vwAAAYL8AABxBAABQQAAACEAAABDAAABQQAAAYL8AABDAAACoQAAAYL8AABDAAACoQAAACEAAABDAAABQQAAACEAAABDAAABQQAAACEAAAJhAAABQQAAAYL8AAJhAAABQQAAAYL8AABDAAACoQAAAYL8AABDAAABQQAAAYL8AABDAAABQQAAAYL8AAJhAAACoQAAAYL8AAJhAAACoQAAACEAAABDAAACoQAAACEAAAJhAAABQQAAACEAAAJhAAABQQAAACEAAABDAAACoQAAACEAAABDAAACoQAAAYL8AABDAAACoQAAAYL8AAJhAAACoQAAACEAAAJhAAABQQAAACEAAAJhAAACoQAAACEAAAJhAAACoQAAAYL8AAJhAAABQQAAAYL8AAJhAAACoQAAACEAAAOjABABQQAAACEAAAOjA/v9vwAAAYL8AAOjAAACoQAAAYL8AAOjABABQQAAACEAAAOjABABQQAAACEAAABDA/v9vwAAAYL8AABDA/v9vwAAAYL8AAOjAAACoQAAAYL8AAOjA/v9vwAAAYL8AAOjA/v9vwAAAYL8AABDAAACoQAAAYL8AABDAAACoQAAACEAAAOjAAACoQAAACEAAABDABABQQAAACEAAABDABABQQAAACEAAAOjAAACoQAAACEAAAOjAAACoQAAAYL8AAOjAAACoQAAAYL8AABDAAACoQAAACEAAABDABABQQAAACEAAABDAAACoQAAACEAAABDAAACoQAAAYL8AABDA/v9vwAAAYL8AABDA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/7+ZWZjZ/3//P5lZmNn/f/8/mVmY2f9//z+ZWZjZ/3//P/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/7+ZWZjZ/3//P5lZmNn/f/8/mVmY2f9//z+ZWZjZ/3//P/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ibkwm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y50k5"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("1_fj7s7")
+map_file = "C:/Users/sabin/OneDrive/Documentos/fear&tactics/Levels/Test00.map"
+entity_fgd = ExtResource("2_qbtk6")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_nki1m")
+
+[node name="entity_0_worldspawn" type="Node3D" parent="QodotMap"]
+script = ExtResource("3_0hy4v")
+properties = {
+"classname": "worldspawn",
+"mapversion": "220"
+}
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+cast_shadow = 2
+gi_mode = 0
+mesh = SubResource("ArrayMesh_b6orw")
+
+[node name="Jogador" type="CharacterBody3D" parent="."]
+script = ExtResource("4_vrtge")
+
+[node name="Jogadormesh" type="MeshInstance3D" parent="Jogador"]
+mesh = SubResource("CapsuleMesh_ibkwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador"]
+shape = SubResource("CapsuleShape3D_y50k5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 2.43379, 2.55561, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44337, 27.3631, -0.121037)
+light_color = Color(0.980392, 0.976471, 0.882353, 1)
+light_energy = 3.0
+light_indirect_energy = 10.0
+light_size = 1.0
+omni_range = 4096.0
+omni_attenuation = 0.0
