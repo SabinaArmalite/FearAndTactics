@@ -1,23 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://s1s0fu4h6hn5"]
+[gd_scene load_steps=4 format=3 uid="uid://s1s0fu4h6hn5"]
 
 [ext_resource type="Script" path="res://PreBinaries/jogador.gd" id="1_hla8i"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ibkwm"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ccw12"]
+[ext_resource type="PackedScene" uid="uid://3ar31ktpjopd" path="res://assets/3d/personajes y otros/KayKit_Adventurers_1.0_FREE/Characters/gltf/Barbarian.glb" id="2_c0i62"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y50k5"]
+radius = 0.239036
 
 [node name="Jogador" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.133149, 0)
 script = ExtResource("1_hla8i")
 
-[node name="Jogadormesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_ibkwm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Jogadormesh"]
-transform = Transform3D(1, 0, 0, 0, 0.13, 0, 0, 0, 0.5, 1.31134e-08, 0.3, -0.3)
-mesh = SubResource("BoxMesh_ccw12")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0157076, 0.585051, -0.0108595)
 shape = SubResource("CapsuleShape3D_y50k5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0382525, -2.60472e-05, 0.00206274)
+
+[node name="Barbarian" parent="MeshInstance3D" instance=ExtResource("2_c0i62")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0.0729331, -0.305039, -0.0100315)

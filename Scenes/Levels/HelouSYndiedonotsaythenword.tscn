@@ -82,7 +82,7 @@ shape = SubResource("ConvexPolygonShape3D_e70lh")
 shape = SubResource("ConvexPolygonShape3D_vtotw")
 
 [node name="Jogador" parent="." instance=ExtResource("4_l6i6g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.12133, 0.433149, 1.48398)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.12133, 0.132083, 1.48398)
 
 [node name="Jogador2" parent="." instance=ExtResource("4_l6i6g")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.133149, 3)
