@@ -20,25 +20,22 @@ func _ready():
 	if party_chars.size() > 0:
 		print("Personajes añadidos:", party_chars.size())
 		# Llamar al primer turno o realizar cualquier acción con `party_chars[0]`
-		start_player_turn()
+		next_character()
 	else:
 		print("No se encontraron personajes en el grupo 'players'")
 
 
 func _process(delta: float):
-
+	if !party_chars[active_character].is_on_floor() and Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
+		party_chars[active_character].set_physics_process(true)
+	if party_chars[active_character-1].is_on_floor():
+		party_chars[active_character-1].set_physics_process(false)
+		
 	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
 		next_character()
 
-func start_player_turn():
-	# Desactiva el control de todos los personajes
-	for character in party_chars:
-		character.disable_controls()
-	# Activa el control del personaje actual
-	party_chars[active_character].enable_controls()
-	print("Turno de: " + party_chars[active_character].name)
 
 func next_character():
 	# Cambiar al siguiente personaje
 	active_character = (active_character + 1) % party_chars.size()
-	start_player_turn()
+	party_chars[active_character].set_physics_process(true)

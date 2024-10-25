@@ -7,12 +7,13 @@ var tengo_amiguitos = false
 func _ready() -> void:
 	pass
 
-func change_camera_target(new_target: Node3D):
-	var new_target_position = new_target.global_transform.origin
-	look_at(new_target_position, Vector3.UP)
+func change_camera_target(new_target: Node3D) -> void:
+	#global_transform.origin devuelve la posicion en coordenadas de la entidad.
+	look_at(new_target.global_transform.origin, Vector3.UP)
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
+	
 	if tengo_amiguitos == false:
 		var party_handler = get_tree().get_current_scene().get_node("PartyHandler")
 		
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 	if target != null:
 		var party_handler = get_tree().get_current_scene().get_node("PartyHandler")
 		var new_target = party_handler.party_chars[party_handler.active_character]
+		
 
 		# Verificar si new_target es un nodo válido antes de intentar acceder a sus propiedades
 		if new_target != null:
