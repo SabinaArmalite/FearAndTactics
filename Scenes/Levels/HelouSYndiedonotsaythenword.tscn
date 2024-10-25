@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d1ghknfl4ii5h"]
+[gd_scene load_steps=15 format=4 uid="uid://d1ghknfl4ii5h"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_lnom7"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_ywy0g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s1s0fu4h6hn5" path="res://Scenes/jogador.tscn" id="4_l6i6g"]
 [ext_resource type="PackedScene" uid="uid://boehgpg2unjrw" path="res://Scenes/camera_000.tscn" id="5_vd5v4"]
 [ext_resource type="PackedScene" uid="uid://be3l1pi0g56ma" path="res://Scenes/PartyHandler.tscn" id="7_jadcj"]
+[ext_resource type="Script" path="res://PreBinaries/char_handler.gd" id="7_x1ocl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk3bv"]
 albedo_texture = ExtResource("3_po7p6")
@@ -91,3 +92,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.1
 transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 5.43379, 2.55561, 2)
 
 [node name="PartyHandler" parent="." instance=ExtResource("7_jadcj")]
+
+[node name="CharHandler" type="Node" parent="."]
+script = ExtResource("7_x1ocl")

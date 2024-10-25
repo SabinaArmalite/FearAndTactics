@@ -16,17 +16,24 @@ func _ready():
 			# Añade el personaje al array `party_chars`
 			party_chars.append(child)
 			print("Añadido " + child.name + " al grupo 'players'")
-	
 	# Verificar si `party_chars` tiene personajes después del ciclo
 	if party_chars.size() > 0:
 		print("Personajes añadidos:", party_chars.size())
 		# Llamar al primer turno o realizar cualquier acción con `party_chars[0]`
-		next_character()
+		start_turn_characters()
 	else:
 		print("No se encontraron personajes en el grupo 'players'")
 
 
 func _process(delta: float):
+
+
+	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
+		next_character()
+
+func start_turn_characters(): #desactivar las fisicas de todos los personajes cuando inicia el turno
+	for i in range(party_chars.size()):
+		party_chars[i].set_physics_process(false)
 	if can_change_character:
 		if !party_chars[active_character].is_on_floor():
 			party_chars[active_character].set_physics_process(true)
@@ -35,10 +42,7 @@ func _process(delta: float):
 			party_chars[active_character - 1].set_physics_process(false)
 			
 			can_change_character = false
-
-	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
-		next_character()
-
+	next_character()
 
 func next_character():
 	# Desactivar la física del personaje actual
@@ -52,7 +56,7 @@ func next_character():
 	party_chars[active_character].set_physics_process(true)
 
 	# Llamar la lógica de inicio de turno si es necesario
-	#start_player_turn()
+	#start_turn_characters()
 
 	# Activar la flag para indicar que se ha hecho el cambio
 	can_change_character = true

@@ -10,7 +10,7 @@ const GRAVITY = -9.0
 
 func _physics_process(delta: float) -> void:
 	if !Input.is_action_pressed("w"):
-		$MeshInstance3D/Barbarian/AnimationPlayer.play("Idle")
+		$Playermodel/AnimationPlayer.play("Idle")
 
 
 	# Add the gravity.
@@ -24,12 +24,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("w") and Input.is_action_pressed("s"):
 		velocity.x = 0
 		velocity.z = 0
-		$MeshInstance3D/Barbarian/AnimationPlayer.play("Idle")
+		$Playermodel/AnimationPlayer.play("Idle")
 
 	elif Input.is_action_pressed("w"):
 		var forwardVector = -Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
 		velocity = -forwardVector * FORWARD_SPEED
-		$MeshInstance3D/Barbarian/AnimationPlayer.play("Running_A")
+		$Playermodel/AnimationPlayer.play("Running_A")
 		if not is_on_floor():
 			velocity.y -= 5
 
