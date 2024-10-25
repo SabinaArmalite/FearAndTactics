@@ -16,33 +16,34 @@ func _ready():
 			# Añade el personaje al array `party_chars`
 			party_chars.append(child)
 			print("Añadido " + child.name + " al grupo 'players'")
+	
 	# Verificar si `party_chars` tiene personajes después del ciclo
 	if party_chars.size() > 0:
 		print("Personajes añadidos:", party_chars.size())
 		# Llamar al primer turno o realizar cualquier acción con `party_chars[0]`
-		start_turn_characters()
+		next_character()
 	else:
 		print("No se encontraron personajes en el grupo 'players'")
+	print(str(party_chars[active_character-1])+ "hola")
+	print(str(party_chars[active_character])+"pepe")
 
 
 func _process(delta: float):
-
+	if party_chars[active_character-1].is_on_floor():
+		print("soy gilipollas en el aire")
+		party_chars[active_character-1].set_physics_process(true)
+			
+		#elif party_chars[active_character - 1].is_on_floor():
+			#party_chars[active_character - 1].set_physics_process(false)
+		for char in party_chars:
+			if char != party_chars[active_character] and char.is_on_floor():
+				char.set_physics_process(false)
+			
+			can_change_character = false
 
 	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
 		next_character()
 
-func start_turn_characters(): #desactivar las fisicas de todos los personajes cuando inicia el turno
-	for i in range(party_chars.size()):
-		party_chars[i].set_physics_process(false)
-	if can_change_character:
-		if !party_chars[active_character].is_on_floor():
-			party_chars[active_character].set_physics_process(true)
-			
-		elif party_chars[active_character - 1].is_on_floor():
-			party_chars[active_character - 1].set_physics_process(false)
-			
-			can_change_character = false
-	next_character()
 
 func next_character():
 	# Desactivar la física del personaje actual
@@ -56,7 +57,7 @@ func next_character():
 	party_chars[active_character].set_physics_process(true)
 
 	# Llamar la lógica de inicio de turno si es necesario
-	#start_turn_characters()
+	#start_player_turn()
 
 	# Activar la flag para indicar que se ha hecho el cambio
 	can_change_character = true

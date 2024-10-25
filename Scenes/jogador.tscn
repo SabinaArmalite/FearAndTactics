@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://t2vh5451hq38" path="res://assets/3d/personajes y otros/player_models.tscn" id="2_wu6k8"]
 [ext_resource type="PackedScene" uid="uid://dqj5qy61lkemd" path="res://Scenes/playercollision.tscn" id="3_h7fe0"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wqgnn"]
-height = 1.17153
-radius = 0.193868
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rtpaq"]
+radius = 0.236093
+height = 1.27058
 
 [node name="Jogador" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.133149, 0)
@@ -16,5 +16,5 @@ script = ExtResource("1_hla8i")
 transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, -0.028221, -0.305065, 0.0749958)
 
 [node name="Playercollision" parent="." instance=ExtResource("3_h7fe0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0331221, 0.282846, 0.0724053)
-shape = SubResource("CylinderShape3D_wqgnn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0331221, 0.318628, 0.0724053)
+shape = SubResource("CapsuleShape3D_rtpaq")
