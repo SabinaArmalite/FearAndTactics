@@ -1,9 +1,10 @@
-[gd_scene load_steps=175 format=4 uid="uid://bikdxvp3dfa3w"]
+[gd_scene load_steps=176 format=4 uid="uid://bikdxvp3dfa3w"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_myxvl"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_2h84p"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_dgr6y"]
 [ext_resource type="PackedScene" uid="uid://s1s0fu4h6hn5" path="res://Scenes/jogador.tscn" id="6_1bevh"]
+[ext_resource type="PackedScene" uid="uid://be3l1pi0g56ma" path="res://Scenes/PartyHandler.tscn" id="6_6xud3"]
 [ext_resource type="PackedScene" uid="uid://boehgpg2unjrw" path="res://Scenes/camera_000.tscn" id="7_wdi4p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuc42"]
@@ -1170,15 +1171,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -2.9375, 19.875)
 [node name="entity_29_light" type="Node3D" parent="FuncGodotMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -2.875, 28)
 
-[node name="Jogador" parent="." instance=ExtResource("6_1bevh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.72609, 1.13315, -6.06111)
-
-[node name="Camera000" parent="." instance=ExtResource("7_wdi4p")]
-transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 6.28606, 3.55561, -3.18509)
-script = null
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_c2n07")
 
+[node name="Jogador" parent="." instance=ExtResource("6_1bevh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.72609, 1.13315, -6.06111)
+
 [node name="Jogador2" parent="." instance=ExtResource("6_1bevh")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.62201, 1.13315, -3.76833)
+
+[node name="PartyHandler" parent="." instance=ExtResource("6_6xud3")]
+
+[node name="Camera000" parent="." instance=ExtResource("7_wdi4p")]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 5.8609, 3.55561, -4.10567)

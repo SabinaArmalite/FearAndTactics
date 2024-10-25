@@ -3,6 +3,7 @@ extends Node
 
 var party_chars = []
 var active_character = 0
+var can_change_character = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	party_chars.clear()
@@ -26,16 +27,32 @@ func _ready():
 
 
 func _process(delta: float):
-	if !party_chars[active_character].is_on_floor() and Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
-		party_chars[active_character].set_physics_process(true)
-	if party_chars[active_character-1].is_on_floor():
-		party_chars[active_character-1].set_physics_process(false)
-		
+	if can_change_character:
+		if !party_chars[active_character].is_on_floor():
+			party_chars[active_character].set_physics_process(true)
+			
+		elif party_chars[active_character - 1].is_on_floor():
+			party_chars[active_character - 1].set_physics_process(false)
+			
+			can_change_character = false
+
 	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):
 		next_character()
 
 
 func next_character():
+	# Desactivar la física del personaje actual
+	if party_chars[active_character].is_on_floor():
+		party_chars[active_character].set_physics_process(false)
+
 	# Cambiar al siguiente personaje
 	active_character = (active_character + 1) % party_chars.size()
+
+	# Activar la física del nuevo personaje
 	party_chars[active_character].set_physics_process(true)
+
+	# Llamar la lógica de inicio de turno si es necesario
+	#start_player_turn()
+
+	# Activar la flag para indicar que se ha hecho el cambio
+	can_change_character = true
