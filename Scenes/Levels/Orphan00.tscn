@@ -1,10 +1,11 @@
-[gd_scene load_steps=176 format=4 uid="uid://bikdxvp3dfa3w"]
+[gd_scene load_steps=177 format=4 uid="uid://bikdxvp3dfa3w"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_myxvl"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_2h84p"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_dgr6y"]
 [ext_resource type="PackedScene" uid="uid://s1s0fu4h6hn5" path="res://Scenes/jogador.tscn" id="6_1bevh"]
 [ext_resource type="PackedScene" uid="uid://be3l1pi0g56ma" path="res://Scenes/PartyHandler.tscn" id="6_6xud3"]
+[ext_resource type="PackedScene" uid="uid://bmhnshdx4nptu" path="res://Scenes/camera_anchor.tscn" id="7_bja7h"]
 [ext_resource type="PackedScene" uid="uid://boehgpg2unjrw" path="res://Scenes/camera_000.tscn" id="7_wdi4p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuc42"]
@@ -1180,10 +1181,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 1.58685e-10, 0.999998, -0.00181514,
 [node name="Jogador2" parent="." instance=ExtResource("6_1bevh")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -1.62114, 0.307489, -3.6567)
 
-[node name="PartyHandler" parent="." instance=ExtResource("6_6xud3")]
-
-[node name="Camera000" parent="." instance=ExtResource("7_wdi4p")]
-transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 5.8609, 3.55561, -4.10567)
-
 [node name="Jogador3" parent="." instance=ExtResource("6_1bevh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.86659, 0.344266, -3.68823)
+
+[node name="Camera000" parent="." instance=ExtResource("7_wdi4p")]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 5.33638, 2.55561, -3.44309)
+
+[node name="PartyHandler" parent="." instance=ExtResource("6_6xud3")]
+
+[node name="CameraAnchor" parent="." instance=ExtResource("7_bja7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.975, 3, 37.801)

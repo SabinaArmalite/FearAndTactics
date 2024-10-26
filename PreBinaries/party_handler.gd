@@ -30,7 +30,7 @@ func _ready():
 
 func _process(delta: float):
 	if party_chars[active_character-1].is_on_floor():
-		print("soy gilipollas en el aire")
+		#print("soy gilipollas en el aire")
 		party_chars[active_character-1].set_physics_process(true)
 			
 		#elif party_chars[active_character - 1].is_on_floor():

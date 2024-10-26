@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bmhnshdx4nptu"]
+
+[node name="CameraAnchor" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.975, 3, 37.801)
