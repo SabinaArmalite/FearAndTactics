@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		
 		if party_handler:
 			# Usamos la función getter para obtener active_character
-			print("PartyHandler encontrado!")
+			#print("PartyHandler encontrado!")
 			#var important_object_path = party_handler.active_character  
 			var important_object = party_handler.party_chars[party_handler.active_character]
 			
