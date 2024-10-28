@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqnd8ffu8xnc5"]
+
+[ext_resource type="Script" path="res://CharacterBase.gd" id="1_g7fyh"]
+
+[node name="CharacterBase" type="Node"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_g7fyh")
+animation_player_path = null
+alive = null
+nameChar = null
+health = null
+agility = null
+stregth = null
+faction = null
+race = null
+sanity = null
+leadership = null
+FORWARD_SPEED = null
+BACK_SPEED = null
+TURN_SPEED = null
