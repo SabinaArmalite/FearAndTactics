@@ -32,13 +32,13 @@ func _process(delta: float):
 	if party_chars[active_character-1].is_on_floor():
 		#print("soy gilipollas en el aire")
 		party_chars[active_character-1].set_physics_process(true)
-			
+
 		#elif party_chars[active_character - 1].is_on_floor():
 			#party_chars[active_character - 1].set_physics_process(false)
 		for char in party_chars:
 			if char != party_chars[active_character] and char.is_on_floor():
 				char.set_physics_process(false)
-			
+
 			can_change_character = false
 
 	if Input.is_action_just_pressed("DEBUG_CHANGE_CHARACTER"):

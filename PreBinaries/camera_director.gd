@@ -3,7 +3,7 @@ extends Node3D
 @onready var raycast = $RayCast3D
 #cositas del director
 @export var camera_anchor_group: String = "CameraAnchor"
-@export var distance_threshold: float = 5.0  # Umbral para el cambio de ancla.
+@export var distance_threshold: float = 5.0  # umbral para el cambio de ancla
 
 func _ready() -> void:
 # Configura el raycast inicialmente
@@ -67,7 +67,7 @@ func change_camera_position():
 	var closest_anchor = find_closest_anchor(active_character.global_position)
 
 	if closest_anchor:
-		global_transform = closest_anchor.global_transform # Asignamos toda la transformación del ancla
+		global_transform = closest_anchor.global_transform
 		active_camera.global_transform = global_transform # asignar LERP
 		print("Cámara movida a:", closest_anchor.name, "nueva posición:", global_transform.origin)
 

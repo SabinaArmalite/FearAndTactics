@@ -12,12 +12,9 @@ func _physics_process(delta: float) -> void:
 	if !Input.is_action_pressed("w"):
 		$Playermodel/AnimationPlayer.play("Idle")
 
-
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta 
 	else:
-		# Si estamos en el suelo, reseteamos la velocidad en el eje Y
 		velocity.y = 0
 
 
@@ -39,12 +36,10 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity.y -= 5
 
-	#If pressing nothing stop velocity
 	else:
 		velocity.x = 0
 		velocity.z = 0 
 
-	# Rotación izquierda/derecha sobre el eje Y
 	if Input.is_action_pressed("a"):
 		rotation.y += TURN_SPEED # Girar a la izquierda
 	elif Input.is_action_pressed("d"):

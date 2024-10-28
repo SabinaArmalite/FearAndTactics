@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=4 uid="uid://d1ghknfl4ii5h"]
 
-[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_lnom7"]
-[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_ywy0g"]
-[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_po7p6"]
-[ext_resource type="PackedScene" uid="uid://s1s0fu4h6hn5" path="res://Scenes/jogador.tscn" id="4_l6i6g"]
-[ext_resource type="PackedScene" uid="uid://boehgpg2unjrw" path="res://Scenes/camera_000.tscn" id="5_vd5v4"]
-[ext_resource type="PackedScene" uid="uid://be3l1pi0g56ma" path="res://Scenes/PartyHandler.tscn" id="7_jadcj"]
-[ext_resource type="Script" path="res://PreBinaries/char_handler.gd" id="7_x1ocl"]
+[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_mid6r"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_giixy"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="3_tidb4"]
+[ext_resource type="PackedScene" uid="uid://s1s0fu4h6hn5" path="res://Scenes/jogador.tscn" id="4_puet8"]
+[ext_resource type="PackedScene" uid="uid://boehgpg2unjrw" path="res://Scenes/camera_000.tscn" id="5_sss4t"]
+[ext_resource type="PackedScene" uid="uid://be3l1pi0g56ma" path="res://Scenes/PartyHandler.tscn" id="6_ilb8p"]
+[ext_resource type="Script" path="res://PreBinaries/char_handler.gd" id="7_s2bbb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk3bv"]
-albedo_texture = ExtResource("3_po7p6")
+albedo_texture = ExtResource("3_tidb4")
 metallic_specular = 0.0
 texture_filter = 2
 
@@ -56,9 +56,9 @@ omni_range = 4096.0
 omni_attenuation = 0.0
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
-script = ExtResource("1_lnom7")
+script = ExtResource("1_mid6r")
 local_map_file = "res://Levels/Test00.map"
-map_settings = ExtResource("2_ywy0g")
+map_settings = ExtResource("2_giixy")
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
@@ -82,16 +82,16 @@ shape = SubResource("ConvexPolygonShape3D_e70lh")
 [node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_vtotw")
 
-[node name="Jogador" parent="." instance=ExtResource("4_l6i6g")]
+[node name="Jogador" parent="." instance=ExtResource("4_puet8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.12133, 0.132083, 1.48398)
 
-[node name="Jogador2" parent="." instance=ExtResource("4_l6i6g")]
+[node name="Jogador2" parent="." instance=ExtResource("4_puet8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.133149, 3)
 
-[node name="Camera000" parent="." instance=ExtResource("5_vd5v4")]
+[node name="Camera000" parent="." instance=ExtResource("5_sss4t")]
 transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 5.43379, 2.55561, 2)
 
-[node name="PartyHandler" parent="." instance=ExtResource("7_jadcj")]
+[node name="PartyHandler" parent="." instance=ExtResource("6_ilb8p")]
 
 [node name="CharHandler" type="Node" parent="."]
-script = ExtResource("7_x1ocl")
+script = ExtResource("7_s2bbb")

@@ -36,7 +36,8 @@ func _init(nameChar: String, health: float, agility: float, stregth: float, fact
 		if animation_player_path:
 			var anim_player = get_node(animation_player_path)
 			if anim_player is AnimationPlayer:
-				set_animation_player(anim_player)
+				#set_animation_player(anim_player)
+				pass
 	else:
 		print("ERROR TRYING TO CREATE CHARACTER (BaseCharacter)")
 		
@@ -140,8 +141,9 @@ func interact():
 	pass
 	
 func play_animation(animation_name: String) -> void:
-	if animation_player and animation_player is AnimationPlayer:
-		animation_player.play(animation_name)
+	#if animation_player and animation_player is AnimationPlayer:
+	#	animation_player.play(animation_name)
+	pass
 
 func character_base_info():
 	return "CharacterName: %s, Health: %f, Agility: %f, Sanity: %f, 
